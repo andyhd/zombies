@@ -217,7 +217,7 @@
             x: bx, y: by,
             w: 32, h: 32,
             vx: 0, vy: 0,
-            sprite: zombieSprites[Math.floor(Math.random() * 4)],
+            sprite: zombieSprites[Math.floor(Math.random() * 5)],
             frame: 0
         };
     }
@@ -271,12 +271,12 @@
         var sprite = [];
         var loaded = 0;
         var src = ['MzombieA.png', 'MzombieB.png',
-                   'MzombieC.png', 'MzombieD.png'];
-        for (var i = 0; i < 4; i++) {
+                   'MzombieC.png', 'MzombieD.png', 'Zomtemplate.png'];
+        for (var i = 0; i < src.length; i++) {
             sprite[i] = new Image();
             sprite[i].onload = function () {
                 loaded++;
-                if (loaded > 3) {
+                if (loaded == src.length) {
                     zombieSprites = sprite;
                     animLoop();
                 }
